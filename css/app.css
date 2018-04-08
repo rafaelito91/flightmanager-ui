@@ -1,0 +1,8 @@
+.add-button {
+    border: 1px solid darkgray;
+    padding-right: 12px;
+}
+
+.add-button > .material-icons {
+    margin-bottom: 15px;
+}

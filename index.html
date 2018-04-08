@@ -3,10 +3,37 @@
     <header>
         <meta charset="utf-8"/>
         <title>Flight Manager</title>
+
+        <link rel="stylesheet" type="text/css" href="node_modules/angular-material/angular-material.css">
+        <link rel="stylesheet" type="text/css" href="node_modules/mdi/css/materialdesignicons.css" media="all">
+        <link rel="stylesheet" type="text/css" href="css/app.css">
     </header>
-    <body ng-app="flightManager">
+    <body ng-app="flightManager" ng-controller="flightsCtrl">
+
+        <md-toolbar>
+           <div class="md-toolbar-tools">
+                <p><strong>Flight Manager</strong></p>
+
+            </div>
+        </md-toolbar>
+
+        <md-button class="add-button">
+            <md-icon class="mdi mdi-plus-circle"></md-icon>
+            Add New Flight
+        </md-button>
+
+        <md-content class="md-padding" layout="row" layout-wrap>
+            <md-card ng-repeat="flight in flights" flex="33">
+                <h2>{{ flight.id }}</h2>
+            </md-card>
+        </md-content>
 
         <script src="node_modules/angular/angular.js"></script>
+        <script src="node_modules/angular-animate/angular-animate.js"></script>
+        <script src="node_modules/angular-aria/angular-aria.js"></script>
+        <script src="node_modules/angular-material/angular-material.js"></script>
         <script src="scripts/app.js"></script>
+        <script src="components/flights.ctrl.js"></script>
+        <script src="components/flights.serv.js"></script>
     </body>
 </html>
