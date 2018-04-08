@@ -1,0 +1,19 @@
+{
+  "name": "flightmanager-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaelito91/flightmanager-ui.git"
+  },
+  "author": "Rafael Kyoshi Ito",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafaelito91/flightmanager-ui/issues"
+  },
+  "homepage": "https://github.com/rafaelito91/flightmanager-ui#readme"
+}
