@@ -13,18 +13,61 @@
         <md-toolbar>
            <div class="md-toolbar-tools">
                 <p><strong>Flight Manager</strong></p>
-
-            </div>
+                <md-button class="add-button">
+                <md-icon class="mdi mdi-plus-circle"></md-icon>
+                    Add New Flight
+                </md-button> 
+           </div>
         </md-toolbar>
 
-        <md-button class="add-button">
-            <md-icon class="mdi mdi-plus-circle"></md-icon>
-            Add New Flight
-        </md-button>
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2" 
+                    md-component-id="left"
+                    md-is-locked-open="true">
+            <md-toolbar>
+                <h1 class="md-toolbar-tools">Add a new Flight</h1>
+            </md-toolbar>
+
+            <md-content layout-padding>
+                <form>
+                    <md-input-container>
+                        <label for="from">From:</label>
+                        <input type="text" id="from" md-autofocus>
+                    </md-input-container>
+                    <md-input-container>
+                        <label for="to">To:</label>
+                        <input type="text" id="to">
+                    </md-input-container>
+                    <md-input-container>
+                        <label for="start">Starts at:</label>
+                        <input mdc-datetime-picker="" date="true" time="true" type="text" id="start"
+placeholder="Date" show-todays-date="" min-date="date" ng-model="dateTime" class=" md-input"
+readonly="readonly">
+                    </md-input-container>
+                    <md-input-container>
+                        <label for="finish">Finishes at:</label>
+                        <input mdc-datetime-picker="" date="true" time="true" type="text" id="finish"
+placeholder="Date" show-todays-date="" min-date="date" ng-model="dateTime" class=" md-input"
+readonly="readonly">
+                    </md-input-container>
+                    <md-input-container>
+                        <label for="captain">Captain in command</label>
+                        <input type="text" id="captain">
+                    </md-input-container>
+                </form>
+            </md-content>
+        </md-sidenav>
 
         <md-content class="md-padding" layout="row" layout-wrap>
             <md-card ng-repeat="flight in flights" flex="33">
-                <h2>{{ flight.id }}</h2>
+                <ul>
+                    <li>Id: {{flight.id}}</li>
+                    <li>From: {{flight.origin.name}}</li>
+                    <li>To: {{flight.destination.name}}</li>
+                    <li>Starts: {{flight.start}}</li>
+                    <li>Finishes: {{flight.end}}</li>
+                    <li>Captain: {{flight.pilot.name}}</li>
+                </ul>
+                <h2></h2>
             </md-card>
         </md-content>
 
